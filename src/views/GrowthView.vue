@@ -4,46 +4,60 @@
 
     <!-- Tip 1: Mindfulness -->
     <div class="tip-card">
-      <img :src="require('@/assets/growth.png')" alt="Mindfulness Tip" />
       <h2>Cultivate Mindfulness</h2>
-      <p>Practice being present in the moment. Mindfulness can reduce stress and enhance well-being.</p>
+      <p>
+        Practice being present in the moment. Mindfulness can reduce stress and
+        enhance well-being.
+      </p>
+      <img :src="require('@/assets/growth.png')" alt="Mindfulness Tip" />
     </div>
 
     <!-- Tip 2: Self-Reflection -->
     <div class="tip-card">
-      <img :src="require('@/assets/growth.png')" alt="Self-Reflection Tip" />
       <h2>Regular Self-Reflection</h2>
-      <p>Take time to reflect on your thoughts, emotions, and goals. It fosters personal growth.</p>
+      <p>
+        Take time to reflect on your thoughts, emotions, and goals. It fosters
+        personal growth.
+      </p>
+      <img :src="require('@/assets/growth.png')" alt="Self-Reflection Tip" />
     </div>
 
     <!-- Tip 3: Gratitude -->
     <div class="tip-card">
-      <img :src="require('@/assets/growth.png')" alt="Gratitude Tip" />
       <h2>Cultivate Gratitude</h2>
-      <p>Express gratitude for the positive aspects of your life. It can lead to increased happiness.</p>
+      <p>
+        Express gratitude for the positive aspects of your life. It can lead to
+        increased happiness.
+      </p>
+      <img :src="require('@/assets/growth.png')" alt="Gratitude Tip" />
     </div>
 
     <!-- Tip 4: Continuous Learning -->
     <div class="tip-card">
-      <img :src="require('@/assets/growth.png')" alt="Continuous Learning Tip" />
       <h2>Embrace Continuous Learning</h2>
-      <p>Keep expanding your knowledge and skills. Lifelong learning contributes to personal development.</p>
+      <p>
+        Keep expanding your knowledge and skills. Lifelong learning contributes
+        to personal development.
+      </p>
+      <img
+        :src="require('@/assets/growth.png')"
+        alt="Continuous Learning Tip"
+      />
     </div>
 
     <!-- Add more tips and cards as needed -->
-
   </div>
 </template>
 
 <script>
 export default {
-  name: 'GrowthView',
+  name: "GrowthView",
 };
 </script>
 
 <style scoped>
 h2 {
-color: #000;
+  color: #000;
 }
 .growth-view {
   text-align: center;
