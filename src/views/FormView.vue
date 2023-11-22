@@ -40,7 +40,7 @@
 
       <div class="form-group">
         <label for="country">Country:</label>
-        <select id="country" name="country" required>
+        <select class="custom-input" id="country" name="country" required>
           <option value="">Select your country</option>
           <option value="usa">United States</option>
           <option value="canada">Canada</option>
