@@ -1,19 +1,43 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import FunnyView from '../views/FunnyView.vue'
-import WellnessView from '../views/WellnessView'
-import CareerView from '../views/CareerView.vue'
-import GrowthView from '../views/GrowthView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
+import FunnyView from '../views/FunnyView.vue';
+import WellnessView from '../views/WellnessView';
+import CareerView from '../views/CareerView.vue';
+import GrowthView from '../views/GrowthView.vue';
 import ChatgptView from '../views/ChatgptView.vue';
-import NewsView from '../views/NewsView.vue'
-import GroomingView from '../views/GroomingView.vue'
-import FoodieView from '../views/FoodieView'
+import NewsView from '../views/NewsView.vue';
+import GroomingView from '../views/GroomingView.vue';
+import FoodieView from '../views/FoodieView';
+import CrudView from '../views/CrudView';
+import FormView from '../views/FormView';
+import ConceptsView from '../views/ConceptsView';
+import VuexView from '../views/VuexView';
 
 const routes = [
   {
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/crud',
+    name: 'crud',
+    component: CrudView
+  },
+  {
+    path: '/form',
+    name: 'form',
+    component: FormView
+  },
+  {
+    path: '/concepts',
+    name: 'concepts',
+    component: ConceptsView
+  },
+  {
+    path: '/vuex',
+    name: 'vuex',
+    component: VuexView
   },
   {
     path: '/funny',

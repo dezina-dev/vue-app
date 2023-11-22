@@ -16,19 +16,19 @@
 
 <script>
 export default {
-  name: 'SimpleForm',
+  name: "SimpleForm",
   data() {
     return {
       formData: {
-        name: '',
-        email: '',
+        name: "",
+        email: "",
       },
     };
   },
   methods: {
     submitForm() {
       // Handle form submission logic here
-      console.log('Form submitted with data:', this.formData);
+      console.log("Form submitted with data:", this.formData);
       // You can add more complex logic or send the data to a server
     },
   },
