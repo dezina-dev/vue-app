@@ -1,38 +1,47 @@
 <template>
-  <div class="airport">
-    <p>{{ airport.abbreviation }}</p>
-    <p>{{ airport.name }}</p>
-    <p>{{ airport.city }}, {{ airport.state }}</p>
+  <div class="airport-card">
+    <div class="card-content">
+      <h3>{{ airport.name }} - {{ airport.abbreviation }}</h3>
+      <p>City - {{airport.city}}</p>
+      <p>State - {{airport.state}}</p>
+    </div>
+    <div class="favorite-icon" @click="addToFavorites" title="Favourite">
+      ❤️
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    airport: {
-      type: Object,
-      required: true
-    }
-  }
-}
+    airport: Object,
+  },
+  methods: {
+    addToFavorites() {
+      this.$emit('add-to-favorites', this.airport);
+    },
+  },
+};
 </script>
 
 <style scoped>
-.airport {
-  border: 3px solid;
-  border-radius: .5rem;
-  padding: 1rem;
-  margin-bottom: 1rem;
+.airport-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.airport p:first-child {
-  font-weight: bold;
-  font-size: 2.5rem;
-  margin: 1rem 0;
+.card-content {
+  text-align: center;
 }
 
-.airport p:last-child {
-  font-style: italic;
-  font-size: .8rem;
+.favorite-icon {
+  cursor: pointer;
+  font-size: 24px;
+  margin-top: 10px;
 }
 </style>

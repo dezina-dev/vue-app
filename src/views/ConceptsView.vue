@@ -34,12 +34,23 @@
     <!-- Directives -->
     <div class="concept-card">
       <h2>Directives</h2>
-      <p>Directives are special tokens in the markup that tell the library to do something to a DOM element.</p>
+      <p>
+        Directives are special tokens in the markup that tell the library to do
+        something to a DOM element.
+      </p>
       <div class="code-snippet">
         <pre>
           <code>
-            <p v-if="isVisible">This is visible!</p>
+           <ul>
+           <li>
+ <p v-if="isVisible">This is visible!</p>
             <button @click="toggleVisibility">Toggle Visibility</button>
+           </li>
+            <li>
+            To execute store action, you can call a dispatch event when the user clicks <br/>
+            with the v-on directive.
+            </li>
+            </ul>
           </code>
         </pre>
       </div>
@@ -87,16 +98,44 @@
       <div class="code-snippet">
         <pre>
           <code>
-            const store = new Vuex.Store({
-              state: {
-                count: 0
-              },
-              mutations: {
-                increment(state) {
-                  state.count++;
-                }
-              }
-            });
+           <ul>
+          <li>npm install vuex@next --save
+          </li>
+          <li>
+          src/store/index.js
+          </li>
+          <li>
+// store/index.js
+import { createStore } from 'vuex';
+
+export default createStore({
+  state: {
+    firstName: 'dez',
+    lastName: 'Doe',
+  },
+  mutations: {},
+  actions: {},
+  getters: {},
+});
+          </li>
+ <li>
+          to display store state, place it inside {{ }}
+          `$store.state.firstName`
+          </li>
+          <li>
+<p>create a Vuex getter to render the data as one string</p>
+<p>
+ getters: {
+    fullName: function (state) {
+      return `${state.firstName} ${state.lastName}`
+    }
+</p>
+<p>
+to display store state, place it inside {{ }}
+          `$store.getters.fullName`
+</p>
+          </li>
+           </ul>
           </code>
         </pre>
       </div>
@@ -108,15 +147,15 @@
 export default {
   data() {
     return {
-      message: 'Hello, Vue!',
-      isVisible: true
+      message: "Hello, Vue!",
+      isVisible: true,
     };
   },
   methods: {
     toggleVisibility() {
       this.isVisible = !this.isVisible;
-    }
-  }
+    },
+  },
 };
 </script>
 

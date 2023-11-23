@@ -1,12 +1,12 @@
 <template>
-<div id="app" class="gradient-background">
-  <nav>
-    <router-link to="/">Home</router-link>
-    <router-link to="/concepts">Concepts</router-link>
-    <router-link to="/crud">Crud</router-link>
-    <router-link to="/form">Form</router-link>
-    <router-link to="/vuex">Vuex</router-link>
-  </nav>
+  <div id="app" class="gradient-background">
+    <nav>
+      <router-link to="/">Home</router-link>
+      <router-link to="/concepts">Concepts</router-link>
+      <router-link to="/crud">Crud</router-link>
+      <router-link to="/form">Form</router-link>
+      <router-link to="/vuex">Vuex</router-link>
+    </nav>
     <router-view />
   </div>
 </template>
@@ -16,7 +16,7 @@
 export default {
   name: 'App',
   components: {
-  },
+  }
 };
 </script>
 <style>
