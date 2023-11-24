@@ -12,6 +12,8 @@ import CrudView from '../views/CrudView';
 import FormView from '../views/FormView';
 import ConceptsView from '../views/ConceptsView';
 import VuexView from '../views/VuexView';
+import ShoppingView from '../views/ShoppingView'
+import CartView from '../views/CartView.vue';
 
 const routes = [
   {
@@ -38,6 +40,16 @@ const routes = [
     path: '/vuex',
     name: 'vuex',
     component: VuexView
+  },
+  {
+    path: '/shopping',
+    name: 'shopping',
+    component: ShoppingView
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: CartView
   },
   {
     path: '/funny',

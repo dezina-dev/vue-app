@@ -1,26 +1,35 @@
 <template>
   <div id="app" class="gradient-background">
     <nav>
-      <router-link to="/">Home</router-link>
-      <router-link to="/concepts">Concepts</router-link>
-      <router-link to="/crud">Crud</router-link>
-      <router-link to="/form">Form</router-link>
-      <router-link to="/vuex">Vuex</router-link>
+      <div class="nav-links">
+        <router-link to="/" class="router-link">Home</router-link>
+        <router-link to="/concepts" class="router-link">Concepts</router-link>
+        <router-link to="/crud" class="router-link">Crud</router-link>
+        <router-link to="/form" class="router-link">Form</router-link>
+        <router-link to="/vuex" class="router-link">Vuex</router-link>
+        <router-link to="/shopping" class="router-link">Shopping</router-link>
+      </div>
+      <router-link to="/cart" class="cart-link">
+        Cart <div class="cart-icon">🛒</div>
+        <div class="cart-counter" v-if="cartCounter > 0">{{ cartCounter }}</div>
+      </router-link>
     </nav>
     <router-view />
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
-  components: {
-  }
+  computed: {
+    cartCounter() {
+      return this.$store.getters.cartCounter;
+    },
+  },
 };
 </script>
+
 <style>
-/* Import the styles */
+
 @import './assets/styles.css';
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -33,20 +42,38 @@ export default {
 }
 
 nav {
-  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 10px;
-  text-align: center;
-  margin-bottom: 20px;
+  background-color: #333;
+  margin-bottom: 25px;
 }
 
-nav a {
+.nav-links {
+  display: flex;
+  gap: 10px; /* Adjust the gap between links */
+}
+
+.router-link {
   color: white;
   text-decoration: none;
-  margin: 0 10px;
   font-weight: bold;
+  padding: 8px 10px; /* Adjust padding for each link */
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.cart-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 10px; /* Adjust padding for the cart link */
+}
+
+.cart-icon {
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 5px;
 }
 </style>
