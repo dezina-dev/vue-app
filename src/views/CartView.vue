@@ -55,7 +55,6 @@ export default {
 </script>
 
 <style scoped>
-/* Add styling as needed */
 .cart-item {
   display: flex;
   justify-content: space-between;
