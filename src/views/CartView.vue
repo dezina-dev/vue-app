@@ -47,7 +47,7 @@ export default {
       this.$store.dispatch('removeFromCart', item);
     },
     checkout() {
-      // Implement checkout logic as needed
+     
       alert('Checkout clicked!');
     },
   },
