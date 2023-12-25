@@ -117,7 +117,8 @@ h1, h2, h3, p, a {
 
 .food-card img {
   max-width: 100%;
-  height: auto; /* Maintain aspect ratio for images */
+  height: 100px; /* Set a fixed height for all images */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire space */
   margin-bottom: 10px;
 }
 
@@ -128,6 +129,10 @@ h1, h2, h3, p, a {
 .food-card p {
   color: #000;
   margin-bottom: 15px;
+  font-size: 14px; /* Set a fixed font size for all recipe descriptions */
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Display ellipsis (...) if the text overflows */
 }
 
 .food-card a {
