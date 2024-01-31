@@ -5,85 +5,45 @@
     <!-- First Row: Food Delivery Services -->
     <h3>Order food</h3>
     <div class="row">
-      <!-- Zomato Card -->
-      <div class="food-card">
-        <img :src="require('@/assets/zomato-logo.png')" alt="Zomato Logo" />
-        <h2>Zomato</h2>
-        <p>Discover and order from restaurants near you.</p>
-        <a href="https://www.zomato.com/" target="_blank">Visit Zomato</a>
-      </div>
-
-      <!-- Swiggy Card -->
-      <div class="food-card">
-        <img :src="require('@/assets/swiggy-logo.png')" alt="Swiggy Logo" />
-        <h2>Swiggy</h2>
-        <p>Order food online from your favorite restaurants.</p>
-        <a href="https://www.swiggy.com/" target="_blank">Visit Swiggy</a>
-      </div>
-       <!-- Eat sure Card -->
-      <div class="food-card">
-        <img :src="require('@/assets/eatsure.jpg')" alt="Eatsure Logo" />
-        <h2>EatSure</h2>
-        <p>Multiple restaurants. Mega Offers. One Delivery!</p>
-        <a href="https://www.eatsure.com/mandarin-oak" target="_blank">Visit EatSure</a>
+      <div class="food-card" v-for="(service, index) in services" :key="index">
+        <img :src="service.logo" :alt="`${service.name} Logo`" />
+        <h2>{{ service.name }}</h2>
+        <p>{{ service.description }}</p>
+        <a :href="service.link" target="_blank">Visit {{ service.name }}</a>
       </div>
     </div>
 
     <!-- Second Row: Cooking Recipes -->
     <h3>Cook food</h3>
+    <img src="@/assets/zomato-logo.png" alt="Pasta Image" width="150px" height="100px" />
+
     <div class="row">
-      <!-- Recipe Card 1 -->
-      <div class="food-card">
-        <!-- Add recipe image -->
-        <h2>Recipe 1</h2>
-        <p>Lemon-Garlic Pasta with Salmon</p>
-        <img src="https://www.eatingwell.com/thmb/SeNPBImM1opsMegGhE3sfHgS0vM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/7124995-ba8df872a8a449faafcab85312e9869a.jpg" alt="Recipe image" width="150px" height="100px"/>
-        <a href="https://www.eatingwell.com/recipe/276373/lemon-garlic-pasta-with-salmon/">View Recipe</a>
+      <div class="food-card" v-for="(recipe, index) in recipes" :key="index">
+        <h2>{{ recipe.name }}</h2>
+        <p>{{ recipe.name }}</p>
+        <img :src="recipe.image" :alt="`${recipe.name} Logo`" />
+       <a :href="recipe.link" target="_blank">View Recipe</a>
       </div>
-
-      <!-- Recipe Card 2 -->
-      <div class="food-card">
-        <!-- Add recipe image -->
-        <h2>Recipe 2</h2>
-        <p>Chhole (Chickpea Curry)</p>
-        <img src="https://www.eatingwell.com/thmb/qLnEv7TqecjHT_E8aXCtlX9SGzA=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/38793671-094ef5584ee444219803492374646bd0.jpg" alt="Recipe image" width="150px" height="100px"/>
-        <a href="https://www.eatingwell.com/recipe/255186/chickpea-curry-chhole/">View Recipe</a>
-      </div>
-
-      <!-- Recipe Card 2 -->
-      <div class="food-card">
-        <!-- Add recipe image -->
-        <h2>Recipe 3</h2>
-        <p>SMOKY MOUNTAIN CHEESY CRAWFISH</p>
-        <img src="https://www.gordonramsay.com/assets/Uploads/_resampled/CroppedFocusedImage192072050-50-Screen-Shot-2021-09-24-at-4.09.44-PM.png" alt="Recipe image" width="150px" height="100px"/>
-        <a href="https://www.gordonramsay.com/gr/recipes/crawfishomelette/">View Recipe</a>
-      </div>
-
-      <!-- Recipe Card 4 -->
-      <div class="food-card">
-        <!-- Add recipe image -->
-        <h2>Recipe 4</h2>
-        <p>Schezwan Paneer</p>
-        <img src="https://harpalssokhi.com/wp-content/uploads/2022/05/SCHEZWAN-PANEER-768x432.jpg" alt="Recipe image" width="150px" height="100px"/>
-        <a href="https://harpalssokhi.com/recipe/schezwan-paneer/">View Recipe</a>
-      </div>
-
-       <!-- Recipe Card 5 -->
-      <div class="food-card">
-        <!-- Add recipe image -->
-        <h2>Recipe 5</h2>
-        <p>Shahi Gosht</p>
-        <img src="https://harpalssokhi.com/wp-content/uploads/2021/04/Patiala-Shahi-Gosht-768x431.png" alt="Recipe image" width="150px" height="100px"/>
-        <a href="https://harpalssokhi.com/recipe/patiala-shahi-gosht-%e0%a4%aa%e0%a4%9f%e0%a4%bf%e0%a4%86%e0%a4%b2%e0%a4%be-%e0%a4%b6%e0%a4%be%e0%a4%b9%e0%a5%80-%e0%a4%97%e0%a5%8b%e0%a4%b6%e0%a5%8d%e0%a4%a4/">View Recipe</a>
-      </div>
-
     </div>
   </div>
 </template>
 
 <script>
+import foodMixin from '@/mixins/foodMixin.js';
+import pastaImage from '@/assets/pasta.webp';
+
 export default {
   name: 'FoodieView',
+  mixins: [foodMixin],
+  data() {
+    return {
+      pastaImage: pastaImage,
+    };
+  },
+  mounted() {
+    console.log('services:', this.services);
+    console.log('Recipes:', this.recipes);
+  },
 };
 </script>
 
