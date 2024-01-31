@@ -19,7 +19,6 @@
 
     <div class="row">
       <div class="food-card" v-for="(recipe, index) in recipes" :key="index">
-        <h2>{{ recipe.name }}</h2>
         <p>{{ recipe.name }}</p>
         <img :src="recipe.image" :alt="`${recipe.name} Logo`" />
        <a :href="recipe.link" target="_blank">View Recipe</a>
